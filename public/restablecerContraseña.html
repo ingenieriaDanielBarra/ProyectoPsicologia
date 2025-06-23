@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilos.css">
+    <title>Página de Psicóloga</title>
+</head>
+<body>
+           <!-- seccion para reestablecer clave -->
+        <section id="formulario-reestablecerClave" >
+            <h1>Restablecer Contraseña</h1>
+            <form id="formRestablecerClave">
+                <div class="campo-password">
+                    <input type="password" id="nueva-contraseña" placeholder="Nueva Contraseña *" required>
+                    <img  id="toggle-passwordRestablecer" class="toggle-password" src="Imagenes/ojo-cerrado.png">
+                </div>
+                <div class="campo-password">
+                    <input type="password" id="confirmar-nueva-contraseña" placeholder="Confirmar nueva contraseña *" required>
+                    <img  id="toggle-passwordRestablecerConfirm" class="toggle-password" src="Imagenes/ojo-cerrado.png">
+                </div>
+                <button type="submit" id="restablecer-clave">Aplicar</button>
+            </form>
+        </section>
+<script  src="./socket.io.js"></script>
+<script  type="module" src="./config.js"></script>        
+<script  type="module" src="./main.js"></script>
+</body>
+</html>

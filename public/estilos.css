@@ -1,0 +1,1347 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+html{
+ scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#cabecera{
+    background: linear-gradient(to right,#daa1e9,#d8b4e2);
+    padding: 10px 20px;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+}
+.navbar .menu{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+.navbar .menu li a{
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease,color 0.3s ease;
+}
+.navbar .menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente */
+    color: #fff;
+}
+nav ul {
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.inicio-sesion{
+    display: flex;
+    align-items: center;
+ }
+
+ .inicio-sesion a img {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s ease;
+}
+.inicio-sesion a img:hover {
+    transform: scale(1.1); /* Efecto de zoom */
+}
+
+
+
+#mensaje-bienvenida {
+    position: fixed;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    color: black;
+    padding: 5px 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 13px;
+    font-family: sans-serif;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+}
+#formulario-creacionUsuario{
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    padding: 40px;
+    max-width: 400px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+#formulario-creacionUsuario.mostrar{
+    opacity: 1;
+    transform: translateY(0);
+}
+#formulario-recuperarClave{
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    padding: 40px;
+    max-width: 400px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+}
+#formulario-recuperarClave.mostrar{
+    opacity: 1;
+    transform: translateY(0);
+}
+#formulario-recuperarClave h1{
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    color: #d8b4e2;
+    margin-bottom: 20px;
+}
+#formRecuperarClave{
+    font-size: 16px;
+    font-family: fantasy;
+}
+#formRecuperarClave button{
+    background: linear-gradient(to right,#daa1e9,#d8b4e2);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 12px;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+#formRecuperarClave button:hover {
+    background-color: #8a48b3;
+    transform: scale(1.05);
+}
+
+#formRecuperarClave  input{
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #d8b4e2;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    transition: border 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+#formRecuperarClave  input:focus {
+    border: 1px solid #a55fc7;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(165, 95, 199, 0.5);
+}
+#formulario-recuperarClave p{
+    font-size: 14px;
+    color: #a55fc7;
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+}
+
+
+#formulario-reestablecerClave {
+    display: none; /* Oculto por defecto */
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    padding: 40px;
+    max-width: 400px;
+    margin: 50px auto;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+#formulario-reestablecerClave.mostrar {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+#formulario-reestablecerClave h1{
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    color: #d8b4e2;
+    margin-bottom: 20px;
+}
+#formRestablecerClave{
+    font-size: 16px;
+    font-family: fantasy;
+}
+#formRestablecerClave button{
+    background: linear-gradient(to right,#daa1e9,#d8b4e2);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 12px;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+#formRestablecerClave button:hover {
+    background-color: #8a48b3;
+    transform: scale(1.05);
+}
+#formRestablecerClave input{
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #d8b4e2;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    transition: border 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+#formRestablecerClave input:focus {
+    border: 1px solid #a55fc7;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(165, 95, 199, 0.5);
+}
+
+
+#formcreacionUsuario{
+
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+#formcreacionUsuario button{
+    background: linear-gradient(to right,#daa1e9,#d8b4e2);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 12px;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+#formcreacionUsuario button:hover {
+    background-color: #8a48b3;
+    transform: scale(1.05);
+}
+#formcreacionUsuario input{
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #d8b4e2;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    transition: border 0.3s;
+}
+#formulario-creacionUsuario h1{
+
+    font-family: 'Arial', sans-serif;
+    font-size: 28px;
+    color: #d8b4e2;
+    margin-bottom: 20px;
+
+}
+
+#formulario-acceso{
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 50px auto;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+#formulario-acceso.mostrar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+}
+#formAcceso{
+    font-size: 16px;
+    font-family: fantasy;
+}
+#formAcceso button{
+    background: linear-gradient(to right,#daa1e9,#d8b4e2);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 12px;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+#formAcceso button:hover {
+    background-color: #8a48b3;
+    transform: scale(1.05);
+}
+
+#formAcceso input{
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #d8b4e2;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    transition: border 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+#formAcceso input:focus {
+    border: 1px solid #a55fc7;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(165, 95, 199, 0.5);
+}
+#formulario-acceso h1{
+    font-family: 'Arial', sans-serif;
+    font-size: 26px;
+    color: #deb3e9;
+    margin-bottom: 20px;
+
+}
+.alternativas a{
+    font-size: 14px;
+    color: #a55fc7;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+}
+#formAcceso .registro {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+}
+#formAcceso .registro a {
+    color: #a55fc7;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+#formAcceso .registro a:hover {
+    color: #8a48b3;
+}
+
+.campo-password{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.campo-password input{
+    width: 100%;
+    padding: 12px, 40px, 12px, 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    transition: border 0.3s;
+}
+.campo-password .toggle-password {
+    position: absolute;
+    right: 10px; /* Posiciona la imagen dentro del input */
+    width: 24px; /* Tamaño de la imagen */
+    height: 24px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+.campo-password .toggle-password:hover {
+    opacity: 0.7; /* Efecto de opacidad al pasar el mouse */
+}
+
+
+.sesion-iniciada {
+    pointer-events: none; /* Bloquea la interacción */
+    cursor: default; /* Hace que el cursor se vea deshabilitado */
+    opacity: 0.3; /* Opcional: lo hace ver más claro */
+}
+
+
+/* Estilos para las secciones */
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+#inicio {
+    background-color: #F8F4F8;
+    text-align: center;
+    /* background-color: #F8F4F8;
+    padding: 50px 20px;
+    text-align: center; */
+}
+.logo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    /* max-width: 200px;
+    border-radius: 50%; */
+}
+
+#sobre-mi{
+    background: linear-gradient(to right,  #aae7c3, #ddf4e7);
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#sobre-mi h2{
+    font-family: cursive;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+.sobre-mi-contenido{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+.biografia{
+    flex: 1;
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: justify;
+}
+.foto{
+    flex: 0 0 300px; /* Ancho fijo */
+    text-align: center;
+}
+.foto img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* diseño responsivo */
+@media (max-width: 768px) {
+    .sobre-mi-contenido {
+        flex-direction: column; /* Cambia a diseño vertical en pantallas pequeñas */
+    }
+
+    .foto {
+        flex: 0 0 auto; /* La foto se ajusta automáticamente */
+    }
+}
+.texto-corto{
+    display: block;
+}
+.texto-completo{
+    display: none;
+}
+#toggle-biografia {
+    color: #333333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1,5em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+
+
+/* Mostrar el botón y ocultar el texto completo solo en dispositivos móviles */
+@media (max-width: 768px) {
+    #toggle-biografia {
+        display: inline-block;
+    }
+
+    .texto-completo {
+        display: none;
+    }
+}
+
+
+
+/* Estilos para la seccion de servicios */
+#servicios{
+    background: linear-gradient(to bottom, #f9f9f9, #e6e6e6); /* Fondo degradado */
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin: 20px auto;
+   
+} 
+#servicios h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+.descripcion-servicios{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+}  
+
+/* Contenedor de las tarjetas */
+.tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Estilo general para cada tarjeta */
+.tarjeta {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    padding: 20px;
+    max-width: 400px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tarjeta:hover {
+    transform: translateY(-10px); /* Efecto de elevación */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+/* Estilos para los títulos dentro de las tarjetas */
+.tarjeta h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+/* Estilos para el texto en cada tarjeta */
+.tarjeta p {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 1rem;
+   color: #555;
+   margin-bottom: 15px;
+}
+/* Botón de agendar */
+.tarjeta button {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+.tarjeta button:hover {
+    background-color: slategrey;
+    transform: scale(1.05);
+}
+/* Colores de fondo para cada tipo de tarjeta */
+.verde {
+    background: linear-gradient(to right,  #aae7c3, #ddf4e7);
+}
+
+.gris {
+    background: linear-gradient(to right,  #ced8e5, #edf0f3);
+}
+
+/* Media Queries para diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: initial;
+    }
+
+    .tarjetas {
+        flex-direction: column;
+    }
+}
+@media (max-width: 500px) {
+    header {
+        padding: 10px;
+    }
+
+    nav ul li a {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .tarjeta {
+        padding: 15px;
+    }
+
+    .tarjeta button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+}
+
+
+
+/* Estilos para la seccion de la consulta */
+#consulta{
+    background: linear-gradient(to bottom, #f9f9f9, #e6e6e6); /* Fondo degradado */
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin: 20px auto;
+    max-width: 800px; /* Ancho máximo */
+}
+#consulta h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+.consulta-descripcion{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+.swiper {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para las imágenes */
+}
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Transición suave al pasar el mouse */
+}
+.swiper-slide img:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+
+/* Estilos para la session de comentarios */
+.comentario {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #f9f9f9;
+  }
+.comentario:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.comentario-fecha {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 0.3rem;
+}
+.comentario-autor {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+#comentario-textoo {
+    
+    margin-bottom: 1rem;
+    background-color: white;
+    border: 2px solid #d8b4e2;
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+#comentario-textoo:focus {
+    border-color: #8a4f91;
+    outline: none;
+    background-color: #e8f5e9;
+}
+
+.comentario-acciones {
+    display: flex;
+    gap: 60px;
+    margin-top: 10px;
+
+}
+.comentario-acciones a {
+    color: #d8b4e2; /* un color vistoso, por ejemplo */
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+.comentario-acciones a:hover {
+    color: #b085bc;
+   
+}
+.contenedor-respuestas {
+    margin-top: 1rem;
+    padding-left: 1rem;
+    border-left: 3px solid #e0e0e0;
+}
+.respuesta-mostrada {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e8f0fe;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+}
+.eliminar-respuesta{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    margin-left: auto;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    opacity: 0.8;
+}
+.eliminar-respuesta:hover {
+    transform: scale(1.2); /* Aumenta el tamaño del ícono al pasar el cursor */
+    opacity: 1; /* Hace que el ícono sea completamente opaco al pasar el cursor */
+}
+.respuestas {
+    margin-top: 0.5rem;
+}
+.respuestas textarea {
+    width: 100%;
+    min-height: 60px;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+.boton-cancelar, .boton-publicar {
+    margin-right: 0.5rem;
+    background-color: #6c63ff;
+    color: #fff;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.boton-cancelar:hover, .boton-publicar:hover {
+    background-color: #524fc7;
+}
+
+.comentarios {
+    font-family: Arial, sans-serif;
+    width: 50%; /* Ajusta el ancho al 50% del contenedor */
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.comentarios h1{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #cea2d1; /* Un color más elegante */
+}
+.top-linea{
+    width: 100%;
+    height: 0.1px;
+    background-color: rgb(207, 213, 235); /* Color de la línea */
+    margin-bottom: 20px;
+}
+
+textarea{
+    width: 100%;
+    height: 80px;
+    margin: 10px 0;
+}
+#enviar-comentario{
+
+    padding: 10px 20px;
+    background-color:#d8b4e2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+#enviar-comentario:hover{
+    background-color: #b085bc;
+}
+.comentario-texto{
+    word-break: break-word; /* Permite que el texto largo se divida en varias líneas */
+    white-space: pre-wrap; /* Mantiene los saltos de línea y espacios en blanco */
+    text-align: justify; /* Alinea el texto a ambos lados */
+    line-height: 1.5; /* Mejora la legibilidad */
+}
+
+#lista-comentarios{
+    margin-top: 30px;
+}
+
+.icono-responder{
+    margin-top: 20px;
+    display: block;
+    font-family: serif;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+
+}
+.icono-eliminar{
+
+    margin-top: 20px;
+    display: block;
+    font-family: serif;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+.icono-responder:hover{
+    color: #d1a7db
+}
+.boton-cancelar{
+    background-color: #7d5f83;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.boton-cancelar:hover{
+    background-color: #ddd;
+}
+.boton-publicar{
+    background-color: #7d5f83;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+}
+.boton-publicar:hover{
+    background-color: #ddd;
+
+}
+#mostrar-todos-comentarios{
+    display: block;
+    margin: 20px auto;
+    padding: 5px 10px;
+    font-size: 12px;
+    color: white;
+    background: linear-gradient(to right,#daa1e9,#d8b4e2);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease , transform 0.3s ease; 
+}
+#mostrar-todos-comentarios:hover{
+    background-color: #b085bc; /* Color de fondo al pasar el mouse */
+    transform: scale(1.05);  /* Efecto de agrandamiento */
+}
+#mostrar-todos-comentarios:active{
+    transform: scale(0.95); /* Efecto de reducción al hacer clic */
+}
+
+/* background: linear-gradient(to right,  #8a4f91, #aa86c9); */
+footer {
+    background: linear-gradient(to right,#daa1e9,#d8b4e2);
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+    position: relative;
+    border-top: 5px solid white; /* Línea superior */
+}
+footer .top-line {
+    height: 5px;
+    background: white;
+    margin-bottom: 20px;
+}
+
+footer .info {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+footer .info p {
+    margin: 5px 0;
+}
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+footer .social-icons a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+footer .social-icons a img:hover {
+    transform: scale(1.2); /* Efecto de zoom */
+    opacity: 0.8;
+}
+
+
+@media (max-width: 768px) {
+    #contenedorFooter {
+        flex-direction: column; /* Cambia a diseño vertical */
+        text-align: center; /* Centra el texto */
+        gap: 10px; /* Reduce el espacio entre elementos */
+    }
+
+    .social-icons {
+        justify-content: center; /* Centra los íconos */
+    }
+
+    .info {
+        font-size: 14px; /* Reduce el tamaño del texto */
+    }
+}
+@media (max-width: 500px) {
+    .social-icons img {
+        width: 30px; /* Reduce el tamaño de los íconos */
+        height: 30px;
+    }
+
+    .info {
+        font-size: 12px; /* Reduce aún más el tamaño del texto */
+    }
+
+    footer {
+        padding: 20px 10px; /* Reduce el padding general */
+    }
+}
+.botonHora {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+.botonHora:hover {
+    background-color: #555;
+}
+#formulario-reserva{
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    position: relative;
+    top: -100px;
+    text-align: center;
+    display: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    max-width: 650px;
+    margin: 120px auto 50px auto;
+    padding: 30px;
+    background: #fff;
+    margin: 120px auto 10px auto;
+}
+#formulario-reserva.mostrar{
+    display: flex;
+    flex-direction: column; /* Organiza el contenido en columna */
+    align-items: center;
+    opacity: 1;
+    transform: scale(1);
+}
+#formulario-reserva h2{
+    font-size: 26px;
+    color: #d8b4e2; /* Un color más elegante */
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+#formulario-reserva p{
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+#formReserva label{
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #5a5a5a;
+}
+#formReserva{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    gap: 10px; /* Espaciado entre filas y columnas */
+}
+.form-group {
+    margin-bottom: 8px; /* Reduce el espacio entre cada campo */
+    position: relative;
+}
+
+#formReserva .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -50px;
+}
+#formReserva input, select, #comentario-consulta{
+    background-color:#c7f0d8;
+    border: none;
+    border-bottom: 2px solid #d8b4e2;
+    border-radius: 5px;
+    width: 100%; /* Ajusta el ancho al contenedor del formulario */
+    box-sizing: border-box;
+}
+
+#formReserva .form-group textarea {
+    resize: none;
+    height: 100px;
+}
+#formReserva input,
+#formReserva select,
+#comentario-consulta {
+    background-color: #f2f2f2;
+    border: 2px solid #d8b4e2;
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+#comentario-consulta {
+    grid-column: span 2; /* Ocupa ambas columnas */
+    margin-bottom: 30px; /* Espacio entre el campo y el botón */
+}
+#formReserva input:focus,
+#formReserva select:focus,
+#comentario-consulta:focus {
+    border-color: #8a4f91;
+    background-color: #e8f5e9;
+    outline: none;
+}
+#formReserva .form-group button {
+    background-color: #8a4f91;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 12px 20px;
+    transition: background-color 0.3s;
+    grid-column: span 2;
+    width: 150px;
+    height: 50px;
+    margin-top: 10px;
+    
+}
+#formReserva button:hover {
+    background-color: #b085bc;
+    transform: scale(1.05);
+}
+
+
+#formulario-reserva input:hover{
+    background-color:#d2eadc;
+}
+#enviar-formulario {
+    padding: 8px 16px; /* Ajusta el relleno interno del botón */
+    font-size: 14px; /* Ajusta el tamaño del texto */
+    width: 100px; /* Ajusta el ancho del botón */
+    height: 50px; /* Ajusta la altura del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    background: linear-gradient(to right,#daa1e9,#d8b4e2); /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Transición para el hover */
+    grid-column: span 2; /* Ocupa dos columnas */
+    justify-self: center; /* Centra el botón en la celda */
+    margin-top:  -30px; /* Centra el botón */
+}
+#enviar-formulario:hover {
+    background-color: #b085bc; /* Color de fondo al pasar el mouse */
+}
+.err{
+    border: 2px solid red !important;
+    background-color: #ffe6e6 !important;
+}
+.err:focus {
+    border-color: darkred !important;
+    background-color: #ffe6e6 !important;
+}
+.error-msg{ 
+    
+    margin-top: -40px;   /* Pequeño espacio entre el campo y el mensaje */
+    margin-bottom: 50px; /* Espacio entre mensajes y siguiente campo */
+    font-size: 12px;       
+    display: block;    
+    text-align: left; /* Asegura que el texto quede alineado correctamente */
+    color: red;
+  
+}
+input.err, textarea.err, select.err {
+    margin-bottom: 2px; /* Reduce el espacio entre el campo y el mensaje */
+    border: 2px solid red; /* Mantiene la visibilidad del error */
+    padding: 5px;;
+}
+#comentario-consulta {
+    height: 120px;
+    resize: none;
+}
+#contador-caracteres{
+    position: absolute;
+    bottom: 100px;
+    right: 20px;
+    font-size: 0.9rem;
+    color: #666;
+    padding: 2px 5px;
+    border-radius: 5px;
+    pointer-events: none ;
+}
+.opciones option{
+    color: #7d4a8b;
+    padding: 10px;
+    font-size: 16px;
+    appearance: none; /* Elimina el estilo nativo */
+    -webkit-appearance: none; /* Compatibilidad con WebKit */
+    -moz-appearance: none; /* Compatibilidad con Firefox */
+    background-color: #c7f0d8;
+    border: 2px solid #d8b4e2;
+    border-radius: 5px;
+
+
+}
+.opciones option:checked {
+    background-color: #d1a7db; /* Fondo morado claro */
+    color: #fff; /* Texto blanco */
+}
+@media (max-width: 768px) {
+    .tarjetas {
+        flex-direction: column; /* Cambia las tarjetas a formato vertical */
+        gap: 20px; /* Reduce el espacio entre tarjetas */
+    }
+    #formulario-reserva {
+        padding: 20px; /* Reduce el padding para pantallas pequeñas */
+
+    }
+}
+@media (max-width: 500px) {
+    #formulario-creacionUsuario {
+        width: 90%;
+        padding: 20px;
+    }
+}
+/* Responsive */
+@media (max-width: 500px) {
+    #formulario-acceso {
+        width: 90%;
+        padding: 20px;
+    }
+}
+@media (max-width: 500px) {
+    #menu {
+        width: 90%;
+        padding: 20px;
+        
+    }
+}
+
+@media (max-width: 768px) {
+    .comentarios {
+        width: 90%; /* Reduce el ancho al 90% en pantallas medianas */
+        padding: 15px;
+    }
+
+    #comentario-textoo {
+        font-size: 14px; /* Reduce el tamaño de fuente */
+        padding: 8px;
+    }
+
+    #enviar-comentario {
+        font-size: 14px; /* Reduce el tamaño del botón */
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 500px) {
+    .comentarios {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        padding: 10px;
+    }
+
+    #comentario-textoo {
+        font-size: 12px; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+        padding: 6px;
+    }
+
+    #enviar-comentario {
+        font-size: 12px; /* Ajusta el tamaño del botón */
+        padding: 6px 12px;
+    }
+}
+
+
+.mensaje{
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    z-index: 1000;
+    opacity: 0;
+    transform: translate(-50%,-60%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.mensaje.mostrar{
+    opacity: 1;
+    transform: translate(-50%, -50%);  /*centrado*/
+}
+.mensaje.exito{
+    background: linear-gradient(to right,#4caf50, #81c682);
+    color: white;
+}
+.mensaje.error{
+    background: linear-gradient(to right,#f44336, #f6837a);
+    color: white;
+}
+
+.swiper {
+    width: 80%;
+    height: 500px;
+}
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.whatsapp-container{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+.whatsapp-button {
+    background-color: #25d366;
+    color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    border: none;
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.whatsapp-button img {
+    width: 40px;
+    height: 40px;
+}
+.whatsapp-tooltip {
+    position: absolute;
+    bottom: 70px;
+    right: 10px;
+    background-color: white;
+    color: black;
+    padding: 20px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0.5;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.whatsapp-container:hover .whatsapp-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+.whatsapp-notificacion {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: red;
+    color: white;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+#btn-volver-arriba{
+    position: fixed;
+    bottom: 20px;
+    right: 110px;
+    background: linear-gradient(to right, #edcff5, #dbbee3);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Oculto por defecto */
+    pointer-events: none; /* Desactiva clics cuando está oculto */
+    transition: opacity 0.3s ease, transform 0.3s ease;     
+}
+#btn-volver-arriba.visible {
+    opacity: 1; /* Visible */
+    pointer-events: auto; /* Activa clics */
+}

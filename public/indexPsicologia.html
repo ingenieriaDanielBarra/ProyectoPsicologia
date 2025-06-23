@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Psicóloga</title>
+    <link rel="stylesheet" href="./estilos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+    
+    <header id="cabecera">
+       <nav class="navbar">
+            <ul  class="menu">
+                 <li><a href="#inicio">Inicio</a></li>
+                 <li><a href="#sobre-mi">Sobre mí</a></li>
+                 <li><a href="#servicios">Servicios</a></li>
+                 <li><a href="#testimonios">Testimonios</a></li>
+                 <li><a href="#consulta">Consulta</a></li>
+                 <li><a href="#formulario-reserva">Formulario de atención</a></li>
+            </ul>
+            <div class="inicio-sesion">
+                <a id="icon-sesion" href="#formulario-acceso">
+                    <img id="sesion" src="Imagenes/login.png" alt="icono de sesion">
+                </a>
+            </div>
+        </nav> 
+        <div id="mensaje-bienvenida"></div>
+    </header>
+
+    <div id="contenido-principal">
+
+        <section id="inicio">
+            <div class="logo">
+                <img src="logo.png" alt="Logo Psicóloga">
+            </div>
+  
+            <p>En este espacio podrás solicitar tu hora de atención psicológica online y presencial en Valparaiso,  y conocer más sobre mi profesionalmente</p>
+        </section>
+        
+        <section id="sobre-mi" class="about">
+            <h2>Elizabeth Barra Ortega</h2>
+            <div class="sobre-mi-contenido">
+                <div class="biografia">
+                    <p class="texto-corto">
+                        Soy psicóloga clínica, titulada de la Universidad Andres bello...
+                        Psicóloga Clínica – Adultos y Adolescentes 
+                        Enfoque psicoanalítico con perspectiva de género.
+                        Psicóloga clínica, titulada de la Universidad Andrés Bello el año 2016. Posteriormente cursé un Magíster en Psicología Clínica, complementando mi formación con diplomados, seminarios, cursos, talleres y grupos de estudio, en una búsqueda constante por profundizar en la comprensión del sufrimiento psíquico...
+                    </p>
+                    <p class="texto-completo" style="display: none;">
+                         Soy psicóloga clínica, titulada de la Universidad Andres bello...
+                         Psicóloga Clínica – Adultos y Adolescentes 
+                         Enfoque psicoanalítico con perspectiva de género.
+                         Psicóloga clínica, titulada de la Universidad Andrés Bello el año 2016. Posteriormente cursé un Magíster en Psicología Clínica, complementando mi formación con diplomados, seminarios, cursos, talleres y grupos de estudio, en una búsqueda constante por profundizar en la comprensión del sufrimiento psíquico. 
+                         Mis primeras experiencias profesionales se desarrollaron en diversos contextos: proyectos comunitarios, educación con infancia y adultos, y actualmente en el ámbito clínico, al que me dedico desde el año 2021. 
+                         Trabajo desde una orientación psicoanalítica, integrando una perspectiva de género que me permite abordar el malestar subjetivo desde una mirada crítica y situada, reconociendo los efectos del discurso social en la construcción de la subjetividad. 
+                         
+                         Método de trabajo.
+                         La psicoterapia psicoanalítica es un proceso que privilegia la palabra y la escucha. A través del diálogo terapéutico, se busca elaborar el malestar, resignificar vivencias y abrir la posibilidad de pensarse desde nuevos lugares. La cura por la palabra invita a transformar certezas en preguntas, habilitando un espacio para comprender las fantasías, emociones, sueños y pensamientos que constituyen nuestro mundo interno. 
+                    </p>
+                    <a id="toggle-biografia" >Seguir leyendo</a>
+               </div>
+                <div class="foto">
+                    <img src=Imagenes/eli.jpeg alt="Foto de Elizabeth">
+               </div>
+            </div>
+        </section>
+    
+        <section id="servicios" class="servicios">
+            <h1>Servicios</h1>
+            <p class="descripcion-servicios">Descubre los tratamientos psicologicos que ofrecemos para adultos y adolescentes, diseñados para ayudarte a superar tus desafios emocionales</p>
+            <div class="tarjetas">
+                <div class="tarjeta verde">
+                    <h2>Tratamiento psicológico  adultos.</h2>
+                    <p>Espacio de terapia psicológica individual para personas mayores de 19 años. Cada sesión tiene una duración de 50 minutos y está orientada a trabajar el malestar que aqueja a quien consulta, desde un abordaje comprensivo y respetuoso.</p>
+                    <p><strong>El valor presencial y online de cada sesión es de $35.000</strong></p>
+                    <button id="agendarAdulto">Agendar</button>
+                </div>
+                <div class="tarjeta gris">
+                    <h2>Tratamiento psicológico  adolescentes.</h2>
+                    <p>Espacio de terapia psicológica individual dirigido a personas entre 16 y 18 años. Cada sesión tiene una duración de 50 minutos y su objetivo es poder trabajar el malestar que afecta a quien consulta. Este proceso se realiza en coordinación con sus principales cuidadores (madre, padre u otros), asegurando un enfoque integral y de apoyo.</p>
+                    <p><strong>El valor presencial y online de cada sesión es de $35.000</strong></p>
+                    <button id="agendarAdolescente">Agendar</button>
+                </div>
+
+            </div>
+        </section>
+        
+        <section id="consulta">
+            <div class="consulta">
+                <h1>Consulta</h1>
+                <p class="consulta-descripcion">Explora nuestras imagenes destacadas y conoce mas sobre mi servicio</p>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="Imagenes/img1.jpg" alt="imagen 1"></div>
+                        <div class="swiper-slide"><img src="Imagenes/img2.jpg" alt="imagen 2"></div>
+                        <div class="swiper-slide"><img src="Imagenes/img4.jpg" alt="imagen 4"></div>
+                        <div class="swiper-slide"><img src="Imagenes/img5.jpg" alt="imagen 5"></div>
+                    </div>
+                          <!-- Botones de navegación -->
+                      <div class="swiper-button-next"></div>
+                      <div class="swiper-button-prev"></div>
+                          <!-- Paginación -->
+                      <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonios">
+            <div class="comentarios">
+                <h1>Deja tu comentario.</h1>
+                
+                <!-- Formulario de nuevo comentario -->
+                <div class="agregar-comentario">
+                   
+                <textarea id="comentario-textoo" placeholder="Escribe un comentario"></textarea>
+
+                <button id="enviar-comentario">Enviar</button>
+                </div>
+            
+                <div id="lista-comentarios">
+
+                </div>
+                <button id="mostrar-todos-comentarios" style="display: none;">Ver más</button>
+
+            </div>
+        </section>
+
+   
+     </div>
+
+     <!-- Formulario de acceso -->
+    <section id="formulario-acceso" style="display: none;">
+        <h1>Inicio sesión</h1></br>
+        <form id="formAcceso">
+            <div>
+                <input type="text" id="correo" placeholder="Ingrese Correo *"><br>
+            </div>
+           
+            <div class="campo-password">
+                <input type="password" id="contraseña" placeholder="Ingrese contraseña *">
+                <img  id="toggle-password-Sesion" class="toggle-password" src="Imagenes/ojo-cerrado.png">
+            </div>
+            
+            <button type="submit" id="inicio-sesion">Acceder</button>
+            <br>
+            <br>
+            <div class="alternativas" >
+                <a href="#formulario-creacionUsuario"> ¿No tienes cuenta?</a> <a href="#formulario-recuperarClave">¿Se te olvido tu contraseña?</a>
+             </div>
+
+        </form>
+    </section>
+
+    <!-- Formulario creacion usuario -->
+
+    <section id="formulario-creacionUsuario" style="display: none;">
+        <h1>Crear cuenta</h1></br>
+        <form id="formcreacionUsuario">
+            <div>
+                <input type="text" id="nombrePaciente" placeholder="Ingrese Nombre *"><br>
+            </div>
+            <div>
+                <input type="text" id="apellidoPaciente" placeholder="Ingrese Apellido *"><br>
+            </div>
+            <div>
+                <input type="text" id="email" placeholder="Ingrese Correo *"><br>
+            </div>
+           
+            <div class="campo-password">
+                <input type="password" id="password" placeholder="Ingrese Contraseña *">
+                <img  id="toggle-passwordCrear" class="toggle-password" src="Imagenes/ojo-cerrado.png">
+            </div>
+            <div class="campo-password">
+                <input type="password" id="confirmPassword" placeholder="Confirmar Contraseña *">
+                <img  id="toggle-passwordCrearConfirm" class="toggle-password" src="Imagenes/ojo-cerrado.png">
+            </div>
+
+            <button type="submit" id="crear-usuario">Aplicar</button>
+
+        </form>
+    </section>
+
+
+     <!-- Formulario de reserva -->
+    <section id="formulario-reserva" style="display: none;">
+        <h2>Solicitud de atención</h2>
+        <p>Completa el siguiente formulario con el servicio que necesites para <br>
+           coordinar tu primera sesión o si quieres comunicarte conmigo para <br>
+           resolver alguna duda. ¡Me contactaré contigo a la brevedad!</p>
+        <form id="formReserva">   
+            
+               <div class="form-group">
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre *" required><br><br>
+                    <span id="error-nombre" class="error-msg"></span>
+                </div>
+               <div class="form-group">
+                    <input type="text" id="apellido" name="apellido" placeholder="Ingrese apellido *" required><br><br>
+                    <span id="error-apellido" class="error-msg"></span>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="edad" name="edad" placeholder="Ingrese edad *" required><br><br>
+                    <span id="error-edad" class="error-msg"></span>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ingrese telefono *" required><br><br>
+                    <span id="error-telefono" class="error-msg"></span>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email2" name="email2" placeholder="Ingrese correo *" required><br><br>
+                    <span id="error-email2" class="error-msg"></span>
+                 </div>
+                 <div class="form-group">
+                        <select id="servicioCombo" class="opciones">
+                            <option value="Seleccione_un_servicio">Seleccione un servicio</option>
+                            <option value="Tratamiento_psicológico_adultos">Tratamiento psicológico  adultos</option>
+                            <option value="Tratamiento_psicológico_adolescentes">Tratamiento psicológico  adolescentes </option>
+                         </select>
+                         <span id="error-servicioCombo" class="error-msg"></span>
+                 </div>
+              <textarea id="comentario-consulta" placeholder="Describa brevemente su motivo de consulta."></textarea>
+              <span id="contador-caracteres">0/250</span> 
+              <span id="error-motivoConsulta" class="error-msg"></span>
+             
+              <button type="submit" id="enviar-formulario">Enviar</button>
+          </form>
+       
+     </section>
+       
+     <!-- seccion para recuperar clave -->
+
+     <section id="formulario-recuperarClave" style="display: none;">
+        <h1>Recuperar Contraseña</h1>
+        <form id="formRecuperarClave">
+            <div>
+                <input type="email" id="correo-recuperar" placeholder="Ingrese correo *" required>
+            </div>
+            <button type="submit" id="recuperar-clave" >Aplicar</button>
+        </form>
+        <p>Te enviaremos un correo con las instrucciones para recuperar tu contraseña.</p>
+     </section>
+
+
+
+    <!-- Más secciones como Servicios y Testimonios según sea necesario -->
+    <footer>
+        <div id="contenedorFooter">
+            <div class="top-line"></div>
+            <div class="info">
+                <p>Elizabeth Barra Ortega - Psicóloga.</p>
+                 <p>Placilla, Region de valparaiso.</p>
+            </div>
+            <div class="social-icons">
+                    <a href="mailto:ingenieria.danielbarra@gmail.com?subject=Consulta%20de%20servicio&body=Hola,%20me%20gustaría%20saber%20más%20sobre%20tus%20servicios.">
+                      <img src="Imagenes/gmail.png" alt="icono de gmail"> 
+                    </a>
+                    <a href="https://wa.me/56988943105?text=Hola,%20me%20gustaría%20pedir%20una%20cita" target="_blank">
+                    <img src="Imagenes/whatsapp.png" alt="icono de whatsapp">
+                    </a>
+            </div>
+        </div>
+        <div class="whatsapp-container">
+            <button class="whatsapp-button" onclick="abrirWhatsapp()">
+                <img src="Imagenes/wsp.png" alt="WhatsApp">
+                <span class="whatsapp-notificacion">1</span>
+            </button>
+            <div class="whatsapp-tooltip">!Agenda tu hora!</div>
+        </div>
+    </footer>
+
+ <button id="btn-volver-arriba" title="volver al inicio">⬆</button>
+
+ <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+ <script>
+    const swiper = new Swiper('.swiper', {
+        loop: true,  // Repetir imágenes
+        autoplay: { delay: 2000 }, // Avance automático cada 3 segundos
+        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+        pagination: { el: '.swiper-pagination', clickable: true }
+    });
+</script>
+<!-- Incluye el archivo config.js -->
+<script type="module" src="./config.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/socket.io-client@4.6.1/dist/socket.io.min.js"></script>
+
+<!-- Incluye tu archivo principal (que importa config.js) -->
+<script type="module" src="./main.js"></script>
+<!-- <script type="module" src="./main.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
