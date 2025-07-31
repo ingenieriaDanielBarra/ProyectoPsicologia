@@ -1,0 +1,12 @@
+# Ignorar archivos de entorno
+.env
+
+# Ignorar dependencias locales
+node_modules/
+
+# Ignorar logs
+*.log
+
+# Ignorar configuraciones de IDE
+.vscode/
+.DS_Store
