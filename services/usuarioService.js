@@ -4,8 +4,9 @@ const Usuario = require('../models/usuario');
 exports.registroNuevoUsuario = async ({nombre, apellido, correo, contraseña}) => {
     //verificar si el usuario ya existe
     const existeUsuario = await Usuario.findOne({correo});
+    
     if (existeUsuario) {
-        throw new Error('El usuario ya existe con ese correo');
+        throw new Error('¡El usuario ya existe con ese correo!.');
     }
     //encriptar la contraseña
     const hashContraseña = await bcrypt.hash(contraseña, 10);

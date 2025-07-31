@@ -26,7 +26,36 @@ const io = new Server(server, {
 });
 
 // Configuración de Helmet para mejorar la seguridad
-app.use(helmet());
+//app.use(helmet());
+app.use(
+    helmet.contentSecurityPolicy({
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: [
+          "'self'",
+          'https://cdn.jsdelivr.net',     // Swiper, SweetAlert2, Socket.io CDN, etc.
+          "'unsafe-inline'"              // Si tienes scripts en línea (no recomendado, pero necesario si los usas)
+        ],
+        styleSrc: [
+          "'self'",
+          'https://cdn.jsdelivr.net',
+          "'unsafe-inline'"
+        ],
+        imgSrc: ["'self'", 'data:', 'https://*'],
+        connectSrc: [
+          "'self'",
+          'ws://localhost:3000',         // WebSocket local
+          'wss://*',                     // WebSocket seguro si vas a producción
+          'https://cdn.jsdelivr.net'
+        ],
+        objectSrc: ["'none'"],
+        upgradeInsecureRequests: [],
+      },
+    })
+  );
+
+
+
 // Middlewares globales
 app.use(express.json());
 app.use(bodyParser.json());
@@ -91,6 +120,7 @@ app.use('/', reservaRoutes);
 app.use('/', comentarioRoutes);
 app.use('/', rolesRoutes);
 app.use('/', usuarioRoutes);
+
 
 //websocket: manejo de eventos
 io.on('connection', (socket) => {

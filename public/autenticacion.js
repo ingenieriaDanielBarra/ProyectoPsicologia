@@ -21,19 +21,19 @@ export const configurarRegistroUsuario = () => {
             //validacion simple con el cliente
         
             if (!nombre || !apellido || !correo || !contraseña || !confirmarContraseña) {
-                mostrarMensaje("Por favor, Completa todos los campos !",'error');
+                mostrarMensaje("¡Por favor, Completa todos los campos!.",'error');
                 return;
             }
             if(!validarCorreo(correo)){
-                mostrarMensaje("¡ Correo electronico no valido !", 'error');
+                mostrarMensaje("¡Correo electronico no válido!.", 'error');
                 return;
             }
             if(!validarContraseña(contraseña)){
-                mostrarMensaje("¡ La contraseña debe tener al menos 8 caracteres, una letra y un número !", 'error');
+                mostrarMensaje("¡La contraseña debe tener al menos 8 caracteres, una letra y un número!.", 'error');
                 return;
             }
             if (contraseña !== confirmarContraseña) {
-                mostrarMensaje("¡ Las contraseñas no coinciden !", 'error');
+                mostrarMensaje("¡Las contraseñas no coinciden!.", 'error');
                 return;  
             }
         
@@ -47,17 +47,21 @@ export const configurarRegistroUsuario = () => {
                 console.log(data);
                 if (response.ok) {
         
-                    mostrarMensaje('¡Usuario creado correctamente!','exito');
+                    mostrarMensaje('¡Usuario creado correctamente. Favor verifica tu correo!.','exito');
                     limpiarFormulario();
                     
                     ocultarElemento(document.getElementById("formulario-creacionUsuario"));
                     mostrarElemento(document.getElementById("formulario-acceso"));
+
+                    //Enviar correo de verificación
+                    await postData(`${CONFIG.API_URL}/enviar-verificacion-correo`, {correo: correo});
+
                    
                 }else{
-                    mostrarMensaje('!Error al crear usuario!','error');
+                    mostrarMensaje(data.message || '¡Error al iniciar sesión!.','error');
                 }
             } catch (error) {
-                    mostrarMensaje(`Error al crear usuario: ${error.message}`, 'error');
+                    mostrarMensaje(`¡Error al crear usuario: ${error.message}!.`, 'error');
             }
         
         });
@@ -78,7 +82,7 @@ export const configurarInicioSesion = () => {
             const contraseña = document.getElementById('contraseña').value;
         
             if(!validarCorreo(correo)){
-                mostrarMensaje('¡Correo electronico no valido!', 'error');
+                mostrarMensaje('¡Correo electrónico no válido!.', 'error');
                 return;
             }
     
@@ -94,7 +98,7 @@ export const configurarInicioSesion = () => {
         
                     localStorage.setItem('token', data.token);
         
-                    mostrarMensaje('¡Inicio de sesion exitoso!', 'exito');
+                    mostrarMensaje('¡Inicio de sesión exitoso!.', 'exito');
         
                     //desabilitar el boton de inicio de sesion
                      const botonSesion = document.getElementById('icon-sesion');
@@ -106,12 +110,12 @@ export const configurarInicioSesion = () => {
                     }, 2000);
                   
                  }else{
-                      mostrarMensaje(data.mensaje || 'Error al iniciar sesion' , 'error');  
+                      mostrarMensaje(data.message || '¡Error al iniciar sesión!.' , 'error');  
                  }
         
             } catch (error) {
-                 console.log('Error en la comunicacion con el el servidor: ', error);
-                 mostrarMensaje('Error al conectarse al servidor', 'error');
+                 console.log('¡Error en la comunicación con el el servidor!.: ', error);
+                 mostrarMensaje('¡Error al conectarse al servidor!.', 'error');
             }
         
         });
@@ -145,11 +149,11 @@ export const configurarRecuperacionClave = () => {
                  
                 const correo = document.getElementById('correo-recuperar').value;
                 if (!correo) {
-                    mostrarMensaje('¡Por favor, ingrese su correo electronico!','error');
+                    mostrarMensaje('¡Por favor, ingrese su correo electrónico!.','error');
                     return;
                 }
                 if (!validarCorreo(correo)){
-                    mostrarMensaje('¡Correo electronico no valido!', 'error');
+                    mostrarMensaje('¡Correo electrónico no válido!.', 'error');
                     return;
                 }
     
@@ -158,14 +162,14 @@ export const configurarRecuperacionClave = () => {
                     const data = await  response.json();
             
                     if (response.ok) {
-                        mostrarMensaje('¡Correo enviado correctamente. Revisa tu bandeja de entrada.!','exito');
+                        mostrarMensaje('¡Correo envíado correctamente. Revisa tu bandeja de entrada!.','exito');
                         
                     } else {
-                        mostrarMensaje(data.message || '¡Error al enviar el correo de recuperacion!', 'error');
+                        mostrarMensaje(data.message || '¡Error al enviar el correo de recuperación!.', 'error');
                     }
                 } catch (error) {
-                    console.log('Error al enviar la solicitud de recuperacion', error);
-                    mostrarMensaje('Error al conectarse al servidor', 'error');
+                    console.log('Error al enviar la solicitud de recuperación', error);
+                    mostrarMensaje('¡Error al conectarse al servidor!.', 'error');
                 }
             });
     };
@@ -195,19 +199,19 @@ export const configurarRestablecimientoClave = () => {
             console.log('Token en el evento de restablecimiento:', token);
     
             if (!nuevaContraseña || !confirmarNuevaContraseña) {
-                mostrarMensaje('!Por favor completar todos los campos¡','error');
+                mostrarMensaje('¡Por favor completar todos los campos!.','error');
                 return;
             }
             if (!validarContraseña(nuevaContraseña)) {
-                mostrarMensaje('¡La contraseña debe tener al menos 8 caracteres, una letra y un número!', 'error');
+                mostrarMensaje('¡La contraseña debe tener al menos 8 caracteres, una letra y un número!.', 'error');
                 return;
             }
             if (nuevaContraseña !== confirmarNuevaContraseña) {
-                mostrarMensaje('!Las contraseñas no coinciden¡','error');
+                mostrarMensaje('¡Las contraseñas no coinciden!.','error');
                 return;
             }
             if (!token) {
-                mostrarMensaje('¡Token no válido o faltante!', 'error');
+                mostrarMensaje('¡Token no válido o faltante!.', 'error');
                 return;
             }
         
@@ -218,16 +222,16 @@ export const configurarRestablecimientoClave = () => {
                 const data = await response.json();
                 console.log('Respuesta del servidor:', data);
                 if (response.ok) {
-                    mostrarMensaje('¡Contraseña restablecida correctamente.!','exito');
+                    mostrarMensaje('¡Contraseña restablecida correctamente!.','exito');
                     setTimeout(() => {
                         window.location.href = 'indexPsicologia.html';
                     },2000);
                 } else {
-                    mostrarMensaje(data.message || '¡Error al restablecer la contraseña.!','error');
+                    mostrarMensaje(data.message || '¡Error al restablecer la contraseña!.','error');
                 }
             } catch (error) {
                 console.log('Error al restablecer contraseña', error);
-                mostrarMensaje('¡Error al conectarse al servidor!', 'error');
+                mostrarMensaje('¡Error al conectarse al servidor!.', 'error');
             }
         }); 
     }
@@ -253,7 +257,7 @@ export const configurarCierreSesionAutomatico = () => {
             setTimeout(() => {
                 localStorage.removeItem("token"); //eliminar el token
                 
-                mostrarMensaje("¡Sesion expirada. Inicia sesion nuevamente.!","error");
+                mostrarMensaje("¡Sesión expirada. Inicia sesión nuevamente!.","error");
             
                 setTimeout(() =>{
                     window.location.href = "indexPsicologia.html"; //redigir a la pagina de inicio

@@ -50,26 +50,26 @@ export const manejarNavegacion = () => {
 };
 
 //Redireccionar desde la seccion servicios a formulario reserva
-export const redirigirDesdeServicios = () => {
-    document.querySelectorAll("#servicios button").forEach(enlaces => {
-        enlaces.addEventListener('click', () =>{
+// export const redirigirDesdeServicios = () => {
+//     document.querySelectorAll("#servicios button").forEach(enlaces => {
+//         enlaces.addEventListener('click', () =>{
                
-           const contenidoPrincipal = document.getElementById("contenido-principal");
-           const formularioReserva = document.getElementById("formulario-reserva");
-           const combobox = document.getElementById("servicioCombo");
+//            const contenidoPrincipal = document.getElementById("contenido-principal");
+//            const formularioReserva = document.getElementById("formulario-reserva");
+//            const combobox = document.getElementById("servicioCombo");
     
-           ocultarElemento(contenidoPrincipal);
-           mostrarElemento(formularioReserva);
+//            ocultarElemento(contenidoPrincipal);
+//            mostrarElemento(formularioReserva);
     
-           if (enlaces.id === "agendarAdulto") {
-               combobox.value = "Tratamiento_psicológico_adultos";
-            } else if(enlaces.id === "agendarAdolescente"){
-                combobox.value = "Tratamiento_psicológico_adolescentes";
-            }
-          });
-    });
+//            if (enlaces.id === "agendarAdulto") {
+//                combobox.value = "Tratamiento_psicológico_adultos";
+//             } else if(enlaces.id === "agendarAdolescente"){
+//                 combobox.value = "Tratamiento_psicológico_adolescentes";
+//             }
+//           });
+//     });
     
-};
+// };
 
 
 export const mostrarMensaje = (mensaje,tipo) => {
@@ -149,7 +149,7 @@ export const actualizarEstadoComentario = () => {
     if (!usuarioAutenticado()) {
         comentarioTexto.disabled = true;
         enviarComentario.style.display = "none";
-        comentarioTexto.placeholder = "¡inicia sesion para comentar!";
+        comentarioTexto.placeholder = "¡inicia sesión para comentar!";
        
         for( let i=0; i<respuestaComentario.length; i++){
             respuestaComentario[i].style.display = "none";
@@ -158,7 +158,7 @@ export const actualizarEstadoComentario = () => {
     }else{
         comentarioTexto.disabled =false;
         enviarComentario.style.display = "block";
-        comentarioTexto.placeholder = "Escribe un comentario";
+        comentarioTexto.placeholder = "Escribe un comentario..";
 
         for( let i=0; i<respuestaComentario.length; i++){
             respuestaComentario[i].style.display = "block";

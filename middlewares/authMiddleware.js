@@ -22,3 +22,13 @@ exports.verificarTokenYRol = (rolesPermitidos) => (req, res, next) => {
     });
 
 };
+
+//middleware para verificar si el correo esta valido
+
+exports.verificarCorreoVerificado = (req, res, next) => {
+
+    if (!req.usuario.verificado) {
+        return res.status(403).json({message: 'Por favor verifica tu correo antes de continuar'});
+    }
+    next();
+};

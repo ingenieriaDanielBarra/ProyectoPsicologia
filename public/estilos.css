@@ -22,7 +22,7 @@ body {
     padding: 10px 20px;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
 .navbar{
     display: flex;
@@ -100,7 +100,7 @@ nav ul {
     transition: opacity 0.5s ease, transform 0.5s ease;
     padding: 40px;
     max-width: 400px;
-    margin: 50px auto;
+    margin: 30px auto;
     background: white;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -116,7 +116,7 @@ nav ul {
     transition: opacity 0.5s ease, transform 0.5s ease;
     padding: 40px;
     max-width: 400px;
-    margin: 50px auto;
+    margin: 110px auto;
     background: white;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -289,7 +289,7 @@ nav ul {
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin: 50px auto;
+    margin: 100px auto;
     opacity: 0;
     transform: scale(0.9);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -422,28 +422,39 @@ section {
 }
 
 #sobre-mi{
-    background: linear-gradient(to right,  #aae7c3, #ddf4e7);
-    padding: 20px;
+    background: linear-gradient(to right,  #aae7c3, #dbdfdc);
+    padding: 50px 20px;
+    text-align: justify;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
     max-width: 1200px;
-    margin: 0 auto;
+    /* padding: 4rem 1rem;
+    background: #f9f9fc; */
 }
-#sobre-mi h2{
-    font-family: cursive;
+#sobre-mi h1{
+    font-family: calibri light;
+    color:#666;
     text-align: center;
-    font-size: 2em;
+    font-size: 1.9rem;
     margin-bottom: 20px;
 }
 .sobre-mi-contenido{
+
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    align-items: center;
+    align-items: center; 
 }
 .biografia{
     flex: 1;
     font-size: 15px;
     line-height: 1.6;
     text-align: justify;
+}
+.biografia p{
+    font-family: calibri light;
+    color: #666
 }
 .foto{
     flex: 0 0 300px; /* Ancho fijo */
@@ -499,24 +510,26 @@ section {
 
 
 
-/* Estilos para la seccion de servicios */
-#servicios{
+/* Estilos para la seccion de honorarios */
+#honorarios{
     background: linear-gradient(to bottom, #f9f9f9, #e6e6e6); /* Fondo degradado */
     padding: 50px 20px;
-    text-align: center;
+    text-align: justify;
     border-radius: 15px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
     margin: 20px auto;
-   
+    max-width: 800px;
+
 } 
-#servicios h1{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 2.5rem;
-    color: #333;
+#honorarios h1{
+    font-family: calibri light;
+    font-size: 2.1rem;
+    color: #666;
     margin-bottom: 10px;
+    text-align: center;
 }
-.descripcion-servicios{
-    font-family: Arial, Helvetica, sans-serif;
+.descripcion-honorarios{
+    font-family: calibri light;
     font-size: 1.2rem;
     color: #666;
     margin-bottom: 30px;
@@ -619,21 +632,22 @@ section {
 #consulta{
     background: linear-gradient(to bottom, #f9f9f9, #e6e6e6); /* Fondo degradado */
     padding: 50px 20px;
-    text-align: center;
+    text-align: justify;
     border-radius: 15px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
     margin: 20px auto;
     max-width: 800px; /* Ancho máximo */
 }
 #consulta h1{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2rem;
-    color: #333;
-    margin-bottom: 30px;
+    font-family: calibri light;
+    font-size: 2.1rem;
+    color: #666;
+    margin-bottom: 10px;
+    text-align: center;
 }
 .consulta-descripcion{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2rem;
+    font-family: calibri light;
+    font-size: 1.1rem;
     color: #666;
     margin-bottom: 30px;
 }
@@ -890,6 +904,7 @@ footer {
     text-align: center;
     position: relative;
     border-top: 5px solid white; /* Línea superior */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
 footer .top-line {
     height: 5px;
@@ -969,7 +984,6 @@ footer .social-icons a img:hover {
     transform: scale(0.9);
     transition: opacity 0.5s ease, transform 0.5s ease;
     position: relative;
-    top: -100px;
     text-align: center;
     display: none;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
@@ -978,7 +992,7 @@ footer .social-icons a img:hover {
     margin: 120px auto 50px auto;
     padding: 30px;
     background: #fff;
-    margin: 120px auto 10px auto;
+    margin: 40px auto 10px auto;
 }
 #formulario-reserva.mostrar{
     display: flex;
@@ -1274,9 +1288,9 @@ input.err, textarea.err, select.err {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     position: relative;
     border: none;
-    animation: pulse 1.5s infinite;
+    /* animation: pulse 1.5s infinite; */
 }
-@keyframes pulse {
+/* @keyframes pulse {
     0% {
         transform: scale(1);
     }
@@ -1286,7 +1300,7 @@ input.err, textarea.err, select.err {
     100% {
         transform: scale(1);
     }
-}
+} */
 .whatsapp-button img {
     width: 40px;
     height: 40px;

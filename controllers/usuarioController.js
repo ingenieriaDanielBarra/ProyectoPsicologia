@@ -14,7 +14,7 @@ exports.registrarUsuario = async (req, res) => {
         res.status(201).json({message: 'Usuario registrado exitosamente', usuario: nuevoUsuario});
 
     } catch (error) {
-        
+        res.status(500).json({message: error.message});
     }
 };
 
@@ -27,5 +27,4 @@ exports.obtenerUsuarios = async (req, res) => {
         console.error('Error al obtener usuarios:', error);
         res.status(500).json({message:  'Error en el servidor', error: error.message});
     }
-};
-
+}

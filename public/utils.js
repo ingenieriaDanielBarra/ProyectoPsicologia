@@ -120,26 +120,26 @@ export const validarFormulario = (reserva)  => {
     //validaciones
     
     if(!reserva.nombre || !soloLetras.test(reserva.nombre)){
-        resaltarError("nombre","¡El NOMBRE es obligatorio y solo puede contener letras.!","error-nombre");
+        resaltarError("nombre","¡El NOMBRE es obligatorio y sólo puede contener letras!.","error-nombre");
     }
     if(!reserva.apellido || !soloLetras.test(reserva.apellido)){
-        resaltarError("apellido","¡El APELLIDO es obligatorio y solo puede contener letras.!","error-apellido");
+        resaltarError("apellido","¡El APELLIDO es obligatorio y sólo puede contener letras!.","error-apellido");
     }
     if(!reserva.edad || isNaN(reserva.edad) || reserva.edad <0 || reserva.edad > 120 || reserva.edad % 1 !== 0){
-        resaltarError("edad","¡La EDAD es obligatoria, valida entre 0 y 120 años.!","error-edad");
+        resaltarError("edad","¡La EDAD es obligatoria, válida entre 0 y 120 años!.","error-edad");
     }
     if(!reserva.telefono || isNaN(reserva.telefono) || reserva.telefono.toString().length < 9){
-        resaltarError("telefono", "¡El TELEFONO es obligatorio, válido (máximo 9 dígitos numéricos) Ej: 999999999 .!","error-telefono");
+        resaltarError("telefono", "¡El TELEFONO es obligatorio, válido (máximo 9 dígitos numéricos) Ej: 999999999 !.","error-telefono");
     }
     if(!validarCorreo(reserva.email)){
-        resaltarError("email2", "¡Ingrese un CORREO electronico valido.!","error-email2")
+        resaltarError("email2", "¡Ingrese un CORREO electrónico válido!.","error-email2")
     }
     if(reserva.servicio === "Seleccione_un_servicio"){
-        resaltarError("servicioCombo","¡Debe seleccionar un servicio.!","error-servicioCombo");
+        resaltarError("servicioCombo","¡Debe seleccionar un servicio!.","error-servicioCombo");
     }
     if (!reserva.motivoConsulta || !soloLetras.test(reserva.motivoConsulta) || reserva.motivoConsulta.length > 250) {
     
-        resaltarError("comentario-consulta", "¡Debe escribir un motivo de consulta, Maximo 250 caracteres.!","error-motivoConsulta");
+        resaltarError("comentario-consulta", "¡Debe escribir un motivo de consulta, Máximo 250 caracteres!.","error-motivoConsulta");
     }
     return errores.length === 0;
   

@@ -12,11 +12,12 @@
     <header id="cabecera">
        <nav class="navbar">
             <ul  class="menu">
-                 <li><a href="#inicio">Inicio</a></li>
+                 <!-- <li><a href="#inicio">Inicio</a></li> -->
                  <li><a href="#sobre-mi">Sobre mí</a></li>
-                 <li><a href="#servicios">Servicios</a></li>
+                 <!-- <li><a href="#servicios">Servicios</a></li> -->
                  <li><a href="#testimonios">Testimonios</a></li>
                  <li><a href="#consulta">Consulta</a></li>
+                 <li><a href="#honorarios">Honorarios</a></li>
                  <li><a href="#formulario-reserva">Formulario de atención</a></li>
             </ul>
             <div class="inicio-sesion">
@@ -30,16 +31,16 @@
 
     <div id="contenido-principal">
 
-        <section id="inicio">
+        <!-- <section id="inicio">
             <div class="logo">
                 <img src="logo.png" alt="Logo Psicóloga">
             </div>
   
             <p>En este espacio podrás solicitar tu hora de atención psicológica online y presencial en Valparaiso,  y conocer más sobre mi profesionalmente</p>
-        </section>
+        </section> -->
         
         <section id="sobre-mi" class="about">
-            <h2>Elizabeth Barra Ortega</h2>
+            <h1>Elizabeth Barra Ortega</h1>
             <div class="sobre-mi-contenido">
                 <div class="biografia">
                     <p class="texto-corto">
@@ -56,7 +57,7 @@
                          Mis primeras experiencias profesionales se desarrollaron en diversos contextos: proyectos comunitarios, educación con infancia y adultos, y actualmente en el ámbito clínico, al que me dedico desde el año 2021. 
                          Trabajo desde una orientación psicoanalítica, integrando una perspectiva de género que me permite abordar el malestar subjetivo desde una mirada crítica y situada, reconociendo los efectos del discurso social en la construcción de la subjetividad. 
                          
-                         Método de trabajo.
+                         <br><br><b>Método de trabajo</b><br><br>
                          La psicoterapia psicoanalítica es un proceso que privilegia la palabra y la escucha. A través del diálogo terapéutico, se busca elaborar el malestar, resignificar vivencias y abrir la posibilidad de pensarse desde nuevos lugares. La cura por la palabra invita a transformar certezas en preguntas, habilitando un espacio para comprender las fantasías, emociones, sueños y pensamientos que constituyen nuestro mundo interno. 
                     </p>
                     <a id="toggle-biografia" >Seguir leyendo</a>
@@ -67,7 +68,7 @@
             </div>
         </section>
     
-        <section id="servicios" class="servicios">
+        <!-- <section id="servicios" class="servicios">
             <h1>Servicios</h1>
             <p class="descripcion-servicios">Descubre los tratamientos psicologicos que ofrecemos para adultos y adolescentes, diseñados para ayudarte a superar tus desafios emocionales</p>
             <div class="tarjetas">
@@ -85,12 +86,12 @@
                 </div>
 
             </div>
-        </section>
+        </section> -->
         
         <section id="consulta">
             <div class="consulta">
                 <h1>Consulta</h1>
-                <p class="consulta-descripcion">Explora nuestras imagenes destacadas y conoce mas sobre mi servicio</p>
+                <p class="consulta-descripcion">Realizo atenciones en modalidad online y presencial. Mi consulta para atenciones presenciales se encuentra ubicada en Placilla, Valparaiso. Es un espacio acogedor y cuidado, pensado para acompañar los procesos terapéuticos en un ambiente de calma, respeto y confidencialidad. </p>
                 <div class="swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide"><img src="Imagenes/img1.jpg" alt="imagen 1"></div>
@@ -107,6 +108,18 @@
             </div>
         </section>
 
+
+        <section id="honorarios">
+            <div class="honorarios">
+                <h1>Honorarios</h1>
+                <p class="honorarios-descripcion">El valor por cada sesión psicológica se acuerda de manera personalizada con cada paciente, teniendo en cuenta sus posibilidades económicas. No obstante, este acuerdo se realiza dentro de un rango de honorarios previamente establecido -entre $22.000 y $35.000-, con el fin de cuidar las condiciones necesarias para que el trabajo terapéutico pueda sostenerse en el tiempo. Además, cuento con una cantidad limitada de cupos destinados a personas que, por su situacion, no pueden abonar el valor propuesto.    
+                </p>
+          
+            </div>
+        </section>
+
+
+
         <section id="testimonios">
             <div class="comentarios">
                 <h1>Deja tu comentario.</h1>
@@ -114,7 +127,7 @@
                 <!-- Formulario de nuevo comentario -->
                 <div class="agregar-comentario">
                    
-                <textarea id="comentario-textoo" placeholder="Escribe un comentario"></textarea>
+                <textarea id="comentario-textoo" placeholder="Escribe un comentario .."></textarea>
 
                 <button id="enviar-comentario">Enviar</button>
                 </div>
@@ -159,17 +172,17 @@
         <h1>Crear cuenta</h1></br>
         <form id="formcreacionUsuario">
             <div>
-                <input type="text" id="nombrePaciente" placeholder="Ingrese Nombre *"><br>
+                <input type="text" id="nombrePaciente" placeholder="Nombre *"><br>
             </div>
             <div>
-                <input type="text" id="apellidoPaciente" placeholder="Ingrese Apellido *"><br>
+                <input type="text" id="apellidoPaciente" placeholder="Apellido *"><br>
             </div>
             <div>
-                <input type="text" id="email" placeholder="Ingrese Correo *"><br>
+                <input type="text" id="email" placeholder="Correo *"><br>
             </div>
            
             <div class="campo-password">
-                <input type="password" id="password" placeholder="Ingrese Contraseña *">
+                <input type="password" id="password" placeholder="Contraseña *">
                 <img  id="toggle-passwordCrear" class="toggle-password" src="Imagenes/ojo-cerrado.png">
             </div>
             <div class="campo-password">
@@ -186,29 +199,27 @@
      <!-- Formulario de reserva -->
     <section id="formulario-reserva" style="display: none;">
         <h2>Solicitud de atención</h2>
-        <p>Completa el siguiente formulario con el servicio que necesites para <br>
-           coordinar tu primera sesión o si quieres comunicarte conmigo para <br>
-           resolver alguna duda. ¡Me contactaré contigo a la brevedad!</p>
+
         <form id="formReserva">   
             
                <div class="form-group">
-                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre *" required><br><br>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre *" required><br><br>
                     <span id="error-nombre" class="error-msg"></span>
                 </div>
                <div class="form-group">
-                    <input type="text" id="apellido" name="apellido" placeholder="Ingrese apellido *" required><br><br>
+                    <input type="text" id="apellido" name="apellido" placeholder="Apellido *" required><br><br>
                     <span id="error-apellido" class="error-msg"></span>
                 </div>
                 <div class="form-group">
-                    <input type="text" id="edad" name="edad" placeholder="Ingrese edad *" required><br><br>
+                    <input type="text" id="edad" name="edad" placeholder="Edad *" required><br><br>
                     <span id="error-edad" class="error-msg"></span>
                 </div>
                 <div class="form-group">
-                    <input type="tel" id="telefono" name="telefono" placeholder="Ingrese telefono *" required><br><br>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Telefono *" required><br><br>
                     <span id="error-telefono" class="error-msg"></span>
                 </div>
                 <div class="form-group">
-                    <input type="email" id="email2" name="email2" placeholder="Ingrese correo *" required><br><br>
+                    <input type="email" id="email2" name="email2" placeholder="Correo *" required><br><br>
                     <span id="error-email2" class="error-msg"></span>
                  </div>
                  <div class="form-group">
@@ -265,7 +276,7 @@
                 <img src="Imagenes/wsp.png" alt="WhatsApp">
                 <span class="whatsapp-notificacion">1</span>
             </button>
-            <div class="whatsapp-tooltip">!Agenda tu hora!</div>
+            <div class="whatsapp-tooltip">Dudas y/o preguntas.</div>
         </div>
     </footer>
 

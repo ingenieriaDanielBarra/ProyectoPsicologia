@@ -14,14 +14,14 @@ export const manejarEnvioReserva = () => {
         
         
             if (!validarFormulario(reserva)) {
-                mostrarMensaje('¡Por favor completa todos los campos correctamente!','error');
+                mostrarMensaje('¡Por favor, completa todos los campos correctamente!.','error');
                 return;
             }
         
            try {
                const response = await postData(`${CONFIG.API_URL}/reservas`, reserva);
                if (response.ok) {
-                   mostrarMensaje('¡Reserva enviada correctamente!','exito');
+                   mostrarMensaje('¡Reserva enviada correctamente!.','exito');
                    limpiarFormulario();
         
                    setTimeout(() => {
@@ -29,7 +29,7 @@ export const manejarEnvioReserva = () => {
                    }, 2000);
                    
                } else {
-                   mostrarMensaje('¡Error al enviar la reserva!','error');
+                   mostrarMensaje('¡Error al enviar la reserva!.','error');
                }
            } catch (err) {
                console.log('Error al guardar la reserva', err);

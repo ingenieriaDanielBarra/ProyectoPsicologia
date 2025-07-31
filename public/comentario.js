@@ -24,7 +24,7 @@ export const manejarEnvioComentario = () => {
          const datosUsuarios = obtenerDatosUsuarioToken();
          
          if(!datosUsuarios){
-             mostrarMensaje("No se pudieron obtener tus datos. Inicia sesion nuevamente.", "error");
+             mostrarMensaje("¡No se pudieron obtener tus datos. Inicia sesión nuevamente!.", "error");
              return;
          }
          const {nombre,  apellido} = datosUsuarios;
@@ -32,7 +32,7 @@ export const manejarEnvioComentario = () => {
          const textoComentario = document.getElementById('comentario-textoo').value.trim();
 
          if (!textoComentario) {
-             mostrarMensaje('¡Por favor, agrega un comentario!','error');
+             mostrarMensaje('¡Por favor, agrega un comentario!.','error');
              return;
          }
          const comentario = {
@@ -53,9 +53,9 @@ export const manejarEnvioComentario = () => {
                  //agregarComentario(comentario.texto,data.comentario._id,nombre, apellido,data.comentario.fechaCreacion);
 
                  document.getElementById('comentario-textoo').value = '';
-                 mostrarMensaje('¡Comentario enviado correctamente!','exito');
+                 mostrarMensaje('¡Comentario enviado correctamente!.','exito');
              } else {
-                 mostrarMensaje('¡Error al enviar comentario!','error');
+                 mostrarMensaje('¡Error al enviar comentario!.','error');
              }
          } catch (err) {
              console.log('¡Error al enviar el comentario!',err);
@@ -175,7 +175,7 @@ export const manejarEnvioComentario = () => {
         
                     const textAreaRes = document.createElement('textarea');
                     textAreaRes.classList.add('respuesta-texto');
-                    textAreaRes.placeholder = "Ingresa tu respuesta";
+                    textAreaRes.placeholder = "Ingresa tu respuesta..";
         
                     const botonCancelar = document.createElement('button');
                     botonCancelar.classList.add('boton-cancelar');
@@ -208,7 +208,7 @@ export const manejarEnvioComentario = () => {
                         const datosUsuarios = obtenerDatosUsuarioToken();
                         
                         if(!datosUsuarios){
-                            mostrarMensaje("No se pudieron obtener tus datos. Inicia sesion nuevamente.", "error");
+                            mostrarMensaje("¡No se pudieron obtener tus datos. Inicia sesión nuevamente!.", "error");
                             return;
                         }
                         const {nombre,  apellido} = datosUsuarios;
@@ -216,7 +216,7 @@ export const manejarEnvioComentario = () => {
                         const textoRespuesta = respuestaDiv.querySelector(".respuesta-texto").value.trim();
             
                         if (!textoRespuesta) {
-                            mostrarMensaje("¡La respuesta no puede estar vacia!",'error');
+                            mostrarMensaje("¡La respuesta no puede estar vacía!.",'error');
                             return;
                         }
                         const respuesta = {
@@ -238,11 +238,11 @@ export const manejarEnvioComentario = () => {
                                 
                                 respuestaDiv.remove();
                             } else {
-                                mostrarMensaje("¡Error al publicar la respuesta!",'error');
+                                mostrarMensaje("¡Error al publicar la respuesta!.",'error');
                             }
             
                         } catch (error) {
-                                console.log("Error al publicar la respuesta", error);
+                                console.log("¡Error al publicar la respuesta!.", error);
                         }
                     });
                 });
@@ -282,7 +282,7 @@ export const manejarEnvioComentario = () => {
                                 //websocket lo realiza.
                                 //comentarioDiv.remove();
                             } else {
-                                mostrarMensaje("Error al eliminar el comentario", "error");
+                                mostrarMensaje("¡Error al eliminar el comentario!.", "error");
                             }
                         } catch (error) {
                             console.log("Error al eliminar el comentario", error);
@@ -394,7 +394,7 @@ export const agregarRespuesta = (comentarioId,respuestaId,texto,nombreUsuario, a
                             }
                         } catch (error) {
                             console.log("Error al eliminar la respuesta", error);
-                            Swal.fire('Error', 'Ocurrio un error al eliminar la respuesta', 'error');
+                            Swal.fire('Error', 'Ocurrió un error al eliminar la respuesta', 'error');
                         }
                     }
                 });
